@@ -9,16 +9,18 @@ const lookup = {
   'U': 'H','V': 'I','W': 'J','X': 'K',
   'Y': 'L','Z': 'M', '?': '?', ',': ','
 };
-
-function rot13(encodedStr){
-   let decodedArr = []; // Your Result goes here
+function rot13(encodedStr) {
+  var codeArr = encodedStr.split("");  // String to Array
+  var decodedArr = []; // Your Result goes here
   // Only change code below this line
 
-  return ;//return decodedArr
-}
+  decodedArr = codeArr.map(function(letter) {
+    if(lookup.hasOwnProperty(letter)) {
+      letter = lookup[letter];
+    }
+    return letter;
+  });
 
-// You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-// console.log(rot13("SERR YBIR? NPPVBWBO"));
 
 module.exports = rot13;
